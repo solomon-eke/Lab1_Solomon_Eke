@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    // State variables to track the current number, correct and wrong answers, and UI feedback
+    @State private var currentNumber = Int.random(in: 1...200)
     var body: some View {
         VStack {
             Image(systemName: "globe")
