@@ -49,6 +49,25 @@ struct ContentView: View {
                         .cornerRadius(10) // Rounds the button corners
                 }
             }
+            
+            .padding()
+            
+            // Display "Right ✅" when the answer is correct, or "Wrong ❌" when it's incorrect
+            if showTick {
+                Text("Right ✅")
+                    .font(.title)
+                    .foregroundColor(.green)
+                    .padding()
+            }
+
+            if showCross {
+                Text("Wrong ❌")
+                    .font(.title)
+                    .foregroundColor(.red)
+                    .padding()
+            }
+
+        }
         }
         .padding()
     }
