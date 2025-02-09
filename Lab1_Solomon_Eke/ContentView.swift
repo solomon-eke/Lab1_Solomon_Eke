@@ -114,7 +114,12 @@ struct ContentView: View {
         if attemptCount == 10 {
             showResult = true // Show the results alert after 10 attempts
             
-          
+            // Delay reset until the alert is dismissed
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.attemptCount = 0
+                self.correctAnswers = 0
+                self.wrongAnswers = 0
+            }
         }
         currentNumber = Int.random(in: 1...200) // Generate a new random number
         showTick = false // Hide tick
