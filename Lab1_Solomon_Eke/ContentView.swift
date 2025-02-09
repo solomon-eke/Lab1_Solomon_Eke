@@ -140,6 +140,8 @@ struct ContentView: View {
     func resetTimer() {
         timer?.invalidate() // Invalidate the current timer
         startTimer() // Restart the timer
+        }
+        .padding()
     }
 }
 
