@@ -121,7 +121,10 @@ struct ContentView: View {
                 self.wrongAnswers = 0
             }
         }
-       
+        currentNumber = Int.random(in: 1...200) // Generate a new random number
+        showTick = false // Hide tick
+        showCross = false // Hide cross
+        resetTimer() // Reset the timer for the next number
     }
     
     // Function to start the timer
