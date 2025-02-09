@@ -108,7 +108,24 @@ struct ContentView: View {
         return true // Otherwise, return true (number is prime)
     }
     
- 
+    // Function to generate a new random number and update attempts
+    func nextNumber() {
+        attemptCount += 1 // Increment attempt count
+        if attemptCount == 10 {
+            showResult = true // Show the results alert after 10 attempts
+            
+            // Delay reset until the alert is dismissed
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.attemptCount = 0
+                self.correctAnswers = 0
+                self.wrongAnswers = 0
+            }
+        }
+        currentNumber = Int.random(in: 1...200) // Generate a new random number
+        showTick = false // Hide tick
+        showCross = false // Hide cross
+        resetTimer() // Reset the timer for the next number
+    }
     
     // Function to start the timer
     func startTimer() {
