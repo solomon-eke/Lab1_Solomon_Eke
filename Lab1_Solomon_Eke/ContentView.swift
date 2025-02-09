@@ -20,10 +20,35 @@ struct ContentView: View {
     @State private var timer: Timer? // Timer to track the 5-second interval for user input
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            // Display the current number
+            Text("\(currentNumber)")
+                .font(.system(size: 100, weight: .bold)) // Large bold font for visibility
+                .padding()
+            HStack {
+                // Button for "Prime" selection
+                Button(action: {
+                    checkAnswer(isPrime: true) // Calls function to check if the number is prime
+                }) {
+                    Text("Prime")
+                        .font(.title) // Sets text to title size
+                        .padding() // Adds padding for better spacing
+                        .background(Color.blue) // Sets background color to blue
+                        .foregroundColor(.white) // Sets text color to white
+                        .cornerRadius(10) // Rounds the button corners
+                }
+                
+                // Button for "Not Prime" selection
+                Button(action: {
+                    checkAnswer(isPrime: false) // Calls function to check if the number is not prime
+                }) {
+                    Text("Not Prime")
+                        .font(.title) // Sets text to title size
+                        .padding() // Adds padding for better spacing
+                        .background(Color.red) // Sets background color to red
+                        .foregroundColor(.white) // Sets text color to white
+                        .cornerRadius(10) // Rounds the button corners
+                }
+            }
         }
         .padding()
     }
