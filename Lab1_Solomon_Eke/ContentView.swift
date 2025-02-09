@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var attemptCount = 0 // Tracks the number of attempts made
     @State private var timer: Timer? // Timer to track the 5-second interval for user input
     
+    
     var body: some View {
         VStack {
             // Display the current number
