@@ -13,6 +13,10 @@ struct ContentView: View {
     // Generates a random number between 1 and 100
     @State private var correctAnswers = 0 // Tracks the number of correct answers
     @State private var wrongAnswers = 0 // Tracks the number of wrong answers
+    @State private var showResult = false // Determines if the results alert should be displayed
+    @State private var showTick = false // Controls the visibility of the green tick image
+    @State private var showCross = false // Controls the visibility of the red cross image
+    @State private var attemptCount = 0 // Tracks the number of attempts made
     var body: some View {
         VStack {
             Image(systemName: "globe")
