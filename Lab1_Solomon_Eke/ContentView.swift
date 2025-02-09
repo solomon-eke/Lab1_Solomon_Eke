@@ -135,7 +135,11 @@ struct ContentView: View {
         }
     }
     
-
+    // Function to reset the timer when a new number is displayed
+    func resetTimer() {
+        timer?.invalidate() // Invalidate the current timer
+        startTimer() // Restart the timer
+    }
 }
 
 // Preview provider for SwiftUI live preview
