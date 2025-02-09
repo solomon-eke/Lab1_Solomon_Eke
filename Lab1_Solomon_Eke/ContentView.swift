@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var showTick = false // Controls the visibility of the green tick image
     @State private var showCross = false // Controls the visibility of the red cross image
     @State private var attemptCount = 0 // Tracks the number of attempts made
+    @State private var timer: Timer? // Timer to track the 5-second interval for user input
     var body: some View {
         VStack {
             Image(systemName: "globe")
